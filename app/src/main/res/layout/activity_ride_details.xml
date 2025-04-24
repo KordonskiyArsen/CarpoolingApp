@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <!-- Блок основної інформації -->
+    <LinearLayout
+        android:id="@+id/mainInfoBlock"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/textRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Маршрут"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Дата і час"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ціна"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textSeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Вільних місць"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Коментар"
+            android:layout_marginTop="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#aaa"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Блок Водія (по центру, з круглим фото) -->
+        <LinearLayout
+            android:id="@+id/driverBlock"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#f5f5f5"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/driverLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Водій"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <ImageView
+                android:id="@+id/driverPhoto"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_person"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/driverName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ім'я"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:id="@+id/driverEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:id="@+id/driverNickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нікнейм"
+                android:textSize="15sp"
+                android:gravity="center"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnBookRide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Забронювати"
+            android:backgroundTint="@color/purple_200"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"/>
+        <TextView
+            android:id="@+id/commentsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Коментарі"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+
+
+    <!-- Список коментарів -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerComments"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/mainInfoBlock"
+        app:layout_constraintBottom_toTopOf="@id/commentInputBlock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Поле для вводу коментаря (прибите до низу) -->
+    <LinearLayout
+        android:id="@+id/commentInputBlock"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/editComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Залишити коментар"/>
+
+        <Button
+            android:id="@+id/btnSendComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Надіслати"
+            android:backgroundTint="@color/purple_200"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

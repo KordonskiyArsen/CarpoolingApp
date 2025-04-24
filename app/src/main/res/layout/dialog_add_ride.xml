@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Звідки"/>
+
+        <EditText
+            android:id="@+id/editTo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Куди"/>
+
+        <EditText
+            android:id="@+id/editDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Дата та час (наприклад: 26.04.2025, 14:00)"/>
+
+        <EditText
+            android:id="@+id/editSeats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Кількість місць"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/editPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ціна"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/editComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Коментар (необов'язково)"/>
+    </LinearLayout>
+</ScrollView>
